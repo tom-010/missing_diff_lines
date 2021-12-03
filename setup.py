@@ -9,13 +9,14 @@ README = (HERE / "README.md").read_text()
 setup(
     name='missing_diff_lines',
     url='https://github.com/tom-010/missing_diff_lines',
-    version='0.0.1',
+    version='0.0.2',
     author='Thomas Deniffel',
     author_email='tdeniffel@gmail.com',
     packages=['missing_diff_lines'], # find_packages(),
     license='Apache2',
     install_requires=[
-        'coverage'
+        'coverage',
+        'GitPython'
     ],
     classifiers=[
         'Development Status :: 4 - Beta',
