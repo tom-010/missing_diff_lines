@@ -81,8 +81,11 @@ class Changes:
         return sorted(res)
 
     def _parse_range_str(self, range_str):
-        start, count = [abs(int(p)) for p in range_str.split(',')]
-        return list(range(start, start+count)) 
+        try:
+            start, count = [abs(int(p)) for p in range_str.split(',')]
+            return list(range(start, start+count)) 
+        except:
+            return []
         
 
 
