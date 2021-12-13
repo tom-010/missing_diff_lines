@@ -22,7 +22,7 @@ class Changes:
 
     @property
     def changed_lines(self):
-        output = subprocess.check_output(['git', 'diff']).decode()
+        output = subprocess.check_output(['git', 'diff', 'HEAD~1']).decode()
         changed_files = self.parse(output)
         res = defaultdict(list)
         for filename, lines in changed_files:
@@ -39,7 +39,7 @@ class Changes:
 
     @property
     def changed_files(self):
-        output = subprocess.check_output(['git', 'diff']).decode()
+        output = subprocess.check_output(['git', 'diff', 'HEAD~1']).decode()
         changed_files = self.parse(output)
         res = set()
         for filename, _ in changed_files:
